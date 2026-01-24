@@ -17,7 +17,7 @@ directory name: tests
 choose: no (simplicity for now)
 ```
 
-## Install Playwright browsers (can be done manually via 'npx playwright install')?
+### Install Playwright browsers (can be done manually via 'npx playwright install')?
 ```text
 choose: yes
 ```
