@@ -2,22 +2,22 @@
 ```bash
 npm init playwright@latest
 ```
-## i. Do you want to use TypeScript or JavaScript?
+### Do you want to use TypeScript or JavaScript?
 ```text
 choose: typescript
 ```
 
-## ii. Where to put your end-to-end tests?
+### Where to put your end-to-end tests?
 ```text
 directory name: tests
 ```
 
-## iii. Add a GitHub Actions workflow?
+### Add a GitHub Actions workflow?
 ```text
 choose: no (simplicity for now)
 ```
 
-## iv. Install Playwright browsers (can be done manually via 'npx playwright install')?
+## Install Playwright browsers (can be done manually via 'npx playwright install')?
 ```text
 choose: yes
 ```
