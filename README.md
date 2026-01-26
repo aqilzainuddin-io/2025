@@ -1,41 +1,44 @@
-# 1. Install playwright command
+# SwagLabs Playwright Automation
+This project contains automated tests for the SwagLabs web application using Playwright with TypeScript.
+
+## 1. Prerequisites
+Before you start, make sure you have Node.js installed. You can download it here: https://nodejs.org/
+
+Check installation by running following command line
+```text
+node -v
+npm -v
+```
+
+Both commands should show a version number.
+
+## 2. Clone this repository
+Open your terminal (or command prompt) and run:
+```text
+git clone https://github.com/aqilzainuddin-io/swaglabs-automation.git
+cd swaglabs-automation
+```
+
+## 3. Install dependencies 
+Install all required packages:
 ```bash
-npm init playwright@latest
-```
-### Do you want to use TypeScript or JavaScript?
-```text
-choose: typescript
+npm install
 ```
 
-### Where to put your end-to-end tests?
+## 4. Update playwright config (if needed)
+Insert bellow line of code in between "use:{<here>}"
 ```text
-directory name: tests
+testIdAttribute: 'data-test'
 ```
 
-### Add a GitHub Actions workflow?
+## 5. How to run test
+for headless:
 ```text
-choose: no (simplicity for now)
+npx playwright test
 ```
-
-### Install Playwright browsers (can be done manually via 'npx playwright install')?
+for visual:
 ```text
-choose: yes
+npx playwright test --headed
 ```
-
-# 2. Structure after installation
-```text
-swaglabs-automation/
-├── node_modules/          ← installed dependencies
-├── playwright.config.ts   ← global playwright config
-├── package.json           ← scripts & dependencies
-├── package-lock.json      ← dependency lock file
-│
-├── tests/
-│   └── example.spec.ts    ← sample test
-│
-├── .gitignore
-└── README.md
-```
-
 
 
