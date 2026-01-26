@@ -31,4 +31,8 @@ export class InventoryPage {
     const item = this.getItemByName(itemName);
     await item.getByRole('button', { name: 'Add to cart' }).click();
   }
+
+  async goToCart(): Promise<void> {
+    await this.page.getByTestId('shopping-cart-link').click();
+  }
 }
