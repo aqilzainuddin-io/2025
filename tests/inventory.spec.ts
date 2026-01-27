@@ -21,10 +21,8 @@ test('adding items to cart', async ({ page }) => {
     { name: 'Test.allTheThings() T-Shirt (Red)', price: '$15.99' },
   ];
 
-  // Initialize counter for tracking number of items in the cart
   let cartCount = 0;
 
-  // Loop through each product in the list
   for (const product of productsToAdd) {
     await expect(inventoryPage.getItemName(product.name)).toBeVisible();
     await expect(inventoryPage.getItemDescription(product.name)).toBeVisible();
