@@ -15,7 +15,7 @@ Both commands should show a version number.
 ## 2. Clone this repository
 Open your terminal (or command prompt) and run:
 ```text
-git clone https://github.com/aqilzainuddin-io/swaglabs-automation.git
+git clone https://github.com/aqilzainuddin-io/typescript-automation.git
 cd swaglabs-automation
 ```
 
