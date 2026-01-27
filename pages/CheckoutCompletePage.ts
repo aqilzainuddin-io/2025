@@ -8,9 +8,9 @@ export class CheckoutCompletePage {
 
   constructor(page: Page) {
     this.page = page;
-    this.completeHeader = page.locator('.complete-header'); // exact header
-    this.completeMessage = page.locator('.complete-text'); // exact message
-    this.backHomeBtn = page.getByRole('button', { name: 'Back Home' });
+    this.completeHeader = page.getByTestId('complete-header');
+    this.completeMessage = page.getByTestId('complete-text');
+    this.backHomeBtn = page.locator('#back-to-products');
   }
 
   async getCompleteHeaderText(): Promise<string> {
