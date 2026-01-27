@@ -7,16 +7,14 @@ export class CheckoutPage {
   readonly postalCodeInput: Locator;
   readonly continueButton: Locator;
   readonly cancelButton: Locator;
-  readonly errorMsg: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.firstNameInput = page.getByTestId('firstName');
     this.lastNameInput = page.getByTestId('lastName');
     this.postalCodeInput = page.getByTestId('postalCode');
-    this.continueButton = page.getByTestId('continue');
-    this.cancelButton = page.getByTestId('cancel');
-    this.errorMsg = page.locator('.error-message-container h3');
+    this.continueButton = page.locator('#continue');
+    this.cancelButton = page.locator('#cancel');
   }
 
   async fillCheckoutInfo(firstName: string, lastName: string, postalCode: string) {
@@ -31,13 +29,5 @@ export class CheckoutPage {
 
   async clickCancel() {
     await this.cancelButton.click();
-  }
-
-  async getErrorMessage() {
-    return this.errorMsg.textContent();
-  }
-
-  async isErrorVisible() {
-    return this.errorMsg.isVisible();
   }
 }
