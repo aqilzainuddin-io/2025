@@ -24,7 +24,6 @@ test('User can fill checkout info, verify overview, and finish checkout with 6 i
     { name: 'Test.allTheThings() T-Shirt (Red)', price: '$15.99' },
   ];
 
-  // Add items to cart
   for (const product of products) {
     await inventoryPage.addItemToCart(product.name);
   }
@@ -37,28 +36,23 @@ test('User can fill checkout info, verify overview, and finish checkout with 6 i
     await expect(cartPage.getCartItemPrice(product.name)).toHaveText(product.price);
   }
 
-  // Checkout Step 1
   await cartPage.clickCheckout();
   await checkoutPage.fillCheckoutInfo('John', 'Doe', '92000');
   await checkoutPage.clickContinue();
 
-  // Verify we are on Step 2
   await expect(page).toHaveURL(/.*checkout-step-two.html/);
 
-  // Step 2: verify all items
   const stepTwoItems = await checkoutStepTwo.getItemDetails();
   expect(stepTwoItems).toEqual(
     products.map(product => ({
       name: product.name,
       price: product.price,
-      quantity: '1', // assuming quantity 1 for all
+      quantity: '1',
     }))
   );
 
-  // Finish checkout
   await checkoutStepTwo.clickFinish();
 
-  // Verify final page
   await expect(page).toHaveURL(/.*checkout-complete.html/);
   await expect(page.locator('.complete-header')).toHaveText('Thank you for your order!');
 });
