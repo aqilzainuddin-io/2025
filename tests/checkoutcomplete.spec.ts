@@ -62,7 +62,7 @@ test('complete checkout with multiple items', async ({ page }) => {
   await checkoutComplete.clickBackHome();
   await expect(page).toHaveURL(/.*inventory.html/);
 
-  await inventoryPage.goToLogoutMenu();
+  await inventoryPage.goToMenu();
   await page.getByTestId('logout-sidebar-link').click();
   await expect(page).toHaveURL(/.*saucedemo.com/);
 });
