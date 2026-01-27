@@ -9,6 +9,7 @@ test.describe('Login functionality', () => {
     await loginPage.goto();
     await loginPage.login('standard_user', 'secret_sauce');
 
+    // verify user is redirected to inventory page
     await expect(page).toHaveURL(/inventory/);
   });
 
@@ -18,6 +19,7 @@ test.describe('Login functionality', () => {
     await loginPage.goto();
     await loginPage.login('invalid_user', 'invalid_password');
 
+    // verify invalid credentials error message
     await expect(loginPage.invalidCredMsg).toHaveText('Epic sadface: Username and password do not match any user in this service');
   });
 
@@ -27,6 +29,7 @@ test.describe('Login functionality', () => {
     await loginPage.goto();
     await loginPage.login('', 'some_password');
 
+    // verify username required error message
     await expect(loginPage.invalidCredMsg).toHaveText('Epic sadface: Username is required');
   });
 
@@ -36,6 +39,7 @@ test.describe('Login functionality', () => {
     await loginPage.goto();
     await loginPage.login('some_user', '');
 
+    // verify password required error message
     await expect(loginPage.invalidCredMsg).toHaveText('Epic sadface: Password is required');
   });
 
