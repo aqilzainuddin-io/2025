@@ -25,13 +25,19 @@ Install all required packages:
 npm install
 ```
 
-## 4. Update playwright config (if needed)
+## 4. Install Playwright browsers
+Playwright requires browser binaries to run tests. Install them with:
+```bash
+npx playwright install
+```
+
+## 5. Update playwright config (if needed)
 Insert bellow line of code in between "use:{<here>}"
 ```text
 testIdAttribute: 'data-test'
 ```
 
-## 5. How to run test
+## 6. How to run test
 for headless:
 ```text
 npx playwright test
