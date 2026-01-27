@@ -32,6 +32,15 @@ export class InventoryPage {
     await item.getByRole('button', { name: 'Add to cart' }).click();
   }
 
+  async removeItemFromCart(itemName: string): Promise<void> {
+    const item = this.getItemByName(itemName);
+    await item.getByRole('button', { name: 'Remove' }).click();
+  }
+
+  async goToMenu(): Promise<void> {
+    await this.page.getByRole('button', { name: 'Open Menu' }).click();
+  }
+
   async goToCart(): Promise<void> {
     await this.page.getByTestId('shopping-cart-link').click();
   }
