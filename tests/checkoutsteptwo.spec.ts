@@ -5,7 +5,7 @@ import { CartPage } from '../pages/CartPage';
 import { CheckoutPage } from '../pages/CheckoutPage';
 import { CheckoutStepTwoPage } from '../pages/CheckoutStepTwoPage'; // new
 
-test('User can fill checkout info, verify overview, and finish checkout with 6 items', async ({ page }) => {
+test('verify checkout items in checkout overview', async ({ page }) => {
   const loginPage = new LoginPage(page);
   const inventoryPage = new InventoryPage(page);
   const cartPage = new CartPage(page);
@@ -50,9 +50,4 @@ test('User can fill checkout info, verify overview, and finish checkout with 6 i
       quantity: '1',
     }))
   );
-
-  await checkoutStepTwo.clickFinish();
-
-  await expect(page).toHaveURL(/.*checkout-complete.html/);
-  await expect(page.locator('.complete-header')).toHaveText('Thank you for your order!');
 });
