@@ -6,7 +6,7 @@ export class CartPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.checkoutButton = page.getByTestId('checkout');
+    this.checkoutButton = page.locator('#checkout');
   }
 
   async clickCheckout() {
@@ -14,22 +14,22 @@ export class CartPage {
   }
 
   async removeItem(productName: string) {
-    await this.page.locator('.cart_item').filter({ hasText: productName }).getByRole('button', { name: 'Remove' }).click();
+    await this.page.getByTestId('inventory-item').filter({ hasText: productName }).getByRole('button', { name: 'Remove' }).click();
   }
 
   getCartItem(productName: string): Locator {
-    return this.page.locator('.cart_item').filter({ hasText: productName });
+    return this.page.getByTestId('inventory-item').filter({ hasText: productName });
   }
 
   getCartItemName(productName: string): Locator {
-    return this.getCartItem(productName).locator('.inventory_item_name');
+    return this.getCartItem(productName).getByTestId('inventory-item-name');
   }
 
   getCartItemDescription(productName: string): Locator {
-    return this.getCartItem(productName).locator('.inventory_item_desc');
+    return this.getCartItem(productName).getByTestId('inventory-item-desc');
   }
 
   getCartItemPrice(productName: string): Locator {
-    return this.getCartItem(productName).locator('.inventory_item_price');
+    return this.getCartItem(productName).getByTestId('inventory-item-price');
   }
 }
