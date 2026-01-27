@@ -6,7 +6,7 @@ import { CheckoutPage } from '../pages/CheckoutPage';
 import { CheckoutStepTwoPage } from '../pages/CheckoutStepTwoPage';
 import { CheckoutCompletePage } from '../pages/CheckoutCompletePage';
 
-test('User can complete checkout with multiple items', async ({ page }) => {
+test('complete checkout with multiple items', async ({ page }) => {
   const loginPage = new LoginPage(page);
   const inventoryPage = new InventoryPage(page);
   const cartPage = new CartPage(page);
@@ -61,4 +61,8 @@ test('User can complete checkout with multiple items', async ({ page }) => {
   expect(await checkoutComplete.isBackHomeBtnVisible()).toBe(true);
   await checkoutComplete.clickBackHome();
   await expect(page).toHaveURL(/.*inventory.html/);
+
+  await inventoryPage.goToLogoutMenu();
+  await page.getByTestId('logout-sidebar-link').click();
+  await expect(page).toHaveURL(/.*saucedemo.com/);
 });
