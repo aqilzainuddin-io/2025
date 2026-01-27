@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { InventoryPage } from '../pages/InventoryPage';
 
-test('Inventory page allows adding multiple items to cart', async ({ page }) => {
+test('adding items to cart', async ({ page }) => {
   const loginPage = new LoginPage(page);
 
   await loginPage.goto();
