@@ -15,7 +15,7 @@ test('verify checkout items in checkout overview', async ({ page }) => {
   await loginPage.goto();
   await loginPage.login('standard_user', 'secret_sauce');
 
-  // define products to add to cart
+  // define products to be added to cart
   const products = [
     { name: 'Sauce Labs Backpack', price: '$29.99' },
     { name: 'Sauce Labs Bike Light', price: '$9.99' },
