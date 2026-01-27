@@ -3,7 +3,7 @@ import { LoginPage } from '../pages/LoginPage';
 
 test.describe('Login functionality', () => {
 
-  test('User can login with valid credentials', async ({ page }) => {
+  test('login with valid credentials', async ({ page }) => {
     const loginPage = new LoginPage(page);
 
     await loginPage.goto();
@@ -12,7 +12,7 @@ test.describe('Login functionality', () => {
     await expect(page).toHaveURL(/inventory/);
   });
 
-  test('User cannot login with invalid credentials', async ({ page }) => {
+  test('login with invalid credentials', async ({ page }) => {
     const loginPage = new LoginPage(page);
 
     await loginPage.goto();
@@ -21,7 +21,7 @@ test.describe('Login functionality', () => {
     await expect(loginPage.invalidCredMsg).toHaveText('Epic sadface: Username and password do not match any user in this service');
   });
 
-  test('Username is required error message is displayed', async ({ page }) => {
+  test('username is required error message is displayed', async ({ page }) => {
     const loginPage = new LoginPage(page);
 
     await loginPage.goto();
@@ -30,7 +30,7 @@ test.describe('Login functionality', () => {
     await expect(loginPage.invalidCredMsg).toHaveText('Epic sadface: Username is required');
   });
 
-  test('Password is required error message is displayed', async ({ page }) => {
+  test('password is required error message is displayed', async ({ page }) => {
     const loginPage = new LoginPage(page);
 
     await loginPage.goto();
