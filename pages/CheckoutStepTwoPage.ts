@@ -9,10 +9,10 @@ export class CheckoutStepTwoPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.itemNames = page.locator('.cart_item .inventory_item_name');
-        this.itemPrices = page.locator('.cart_item .inventory_item_price');
-        this.itemQuantities = page.locator('.cart_quantity');
-        this.finishBtn = page.locator('#finish'); // finish button
+        this.itemNames = page.getByTestId('inventory-item-name');
+        this.itemPrices = page.getByTestId('inventory-item-price');
+        this.itemQuantities = page.getByTestId('item-quantity');
+        this.finishBtn = page.locator('#finish');
     }
 
     async getItemDetails() {
