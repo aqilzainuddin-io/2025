@@ -18,12 +18,10 @@ If I (or anyone else) need to archive another repository into this collection wh
    git add .
    git commit -m "Save work before import"
    ```
-
 2. **Add the project as a subdirectory:**
     ```bash
     git subtree add --prefix=<your-repo-name> <your-old-repo-url> main
     ```
-
 3. **Push the changes:**
     ```bash
     git push origin main
