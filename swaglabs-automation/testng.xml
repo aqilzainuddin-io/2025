@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Swaglabs Tests" preserve-order="true">
+    <test name="E2E Tests">
+        <classes>
+            <class name="tests.login.LoginTest"/>
+            <class name="tests.inventory.InventoryTest"/>
+            <class name="tests.cart.CartTest"/>
+            <class name="tests.checkout.CheckoutTest"/>
+            <class name="tests.e2e.E2ETest"/>
+        </classes>
+    </test>
+</suite>
